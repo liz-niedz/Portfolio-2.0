@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Yanone+Kaffeesatz:wght@200..700&display=swap') */
+
+.title{
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 900;
+    color: white !important;
+    font-style: normal;
+    /* margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px; */
+}
+
+
+.logoTitle {
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 900;
+    
+        color:  #03c2fc!important;
+        font-style: normal;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        padding-right: 700px;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+}
+
+.progress-bar {
+    position: relative;
+    height: 10px;
+    width: 350px;
+    background: var(--grey);
+    background-color: white;
+    border-radius: 50px;
+    margin: 5px;
+  }
+  
+  .progress-fill {
+    position: absolute;
+    height: 10px;
+    width: 0%;
+    animation: progress-forward 4s infinite;
+    background: #03c2fc;
+    border-radius: 50px;
+  }
+
+  
+
+  @keyframes progress-forward {
+    0% {
+      width: 0%;
+    }
+    25% {
+      width: 50%;
+    }
+    50% {
+      width: 75%;
+    }
+    75% {
+      width: 85%;
+    }
+    100% {
+      width: 100%;
+    }
+  } ;
+
+  /* HTML: <div class="loader"></div> */
+.loader {
+  width: 70px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side,#F8F8FF 90%,#F8F8FF) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
+
+
+  .dot-flashing {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+  }
+  .dot-flashing::before, .dot-flashing::after {
+    content: "";
+    /* //display: inline-block; */
+    position: absolute;
+    top: 0;
+  }
+  .dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+  }
+  .dot-flashing::after {
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes dot-flashing {
+    0% {
+      background-color: #9880ff;
+    }
+    50%, 100% {
+      background-color: rgba(152, 128, 255, 0.2);
+    }
+  }
+
+  .sideBar{
+    height: 50% !important;
+    width: 50% !important;
+   /* background-color: black !important; */
+  }
+  .rightSide {
+    height: 50% !important;
+    width: 50% !important;
+    color: white !important;
+    background-color: white !important;
+
+  }
+
+  .homeButton{
+    background-color: #b0ecfd !important;
+   color: black  !important;
+  }
+
+  .homeButton:hover{
+    color: black;
+    background-color: #03c2fc !important;
+  }
+
+  .codesandbox-1drqwgc-euiFlexGroup-responsive-l-flexStart-stretch-row {
+    gap:  0px!important;
+  }
+
+  .codesandbox-4rroty-euiFlexGrid-l-row-stretch-2-responsive {
+    gap:  0px!important;
+  }
+
+  .logoBox{
+    gap: 10px !important
+  }
+
+  /* loading dots */
+
+.loading:after {
+  content: ' .';
+  width: 60px !important;
+  animation: dots 2s steps(5) infinite;}
+  
+
+  @keyframes dots {
+    0%, 20% {
+      color: rgba(0,0,0,0);
+      text-shadow:
+        .35em 0 0 rgba(0,0,0,0),
+        .50em 0 0 rgba(0,0,0,0);}
+    40% {
+      color: white;
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    60% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 white;}}
+  
