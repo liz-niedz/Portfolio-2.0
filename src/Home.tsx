@@ -19,43 +19,46 @@ import {
 } from "@elastic/eui";
 import SideNav from "./sideNav";
 import { ThemeProvider, css } from "@emotion/react";
+import styled from "@emotion/styled";
+
+// Define a theme interface
+interface Theme {
+  brandColor: string;
+  backgroundColor: string;
+}
+
+const theme: Theme = {
+  brandColor: "white",
+  backgroundColor: "black",
+};
+
+// Create a styled component for the EuiFlexGroup
+const StyledFlexGroup = styled(EuiFlexGroup)(({ theme }: { theme: Theme }) => ({
+  color: theme.brandColor,
+  backgroundColor: theme.backgroundColor,
+  gap: "10px",
+  padding: "40vh 1rem",
+  "@media (max-width: 768px)": {
+    padding: "40vh 10px",
+  },
+}));
 
 const HomePage = () => {
   return (
-    <div>
-      <ThemeProvider
-        theme={{
-          // @ts-ignore - if providing your own Emotion theme, create your own emotion.d.ts - see https://emotion.sh/docs/typescript#define-a-theme
-          brandColor: "white",
-          backgroundColor: "black",
-          padding: "50vh",
-          height: "-webkit-fill-available",
-          width: "fit-content",
+    <ThemeProvider theme={theme}>
+      <div
+        css={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+          "@media (max-width: 768px)": {
+            padding: "40vh 10px",
+          },
         }}
       >
-        <EuiFlexGroup
-          alignItems="center"
-          css={(theme: any) => css`
-            color: ${theme.brandColor};
-            background-color: ${theme.backgroundColor};
-            overflow: hidden;
-            white-space: nowrap;
-            padding: ${theme.padding};
-             }
-          `}
-        >
-          {/* <EuiFlexItem> */}
-
-          <EuiTitle
-            //   css={(theme: any) => css`
-            //   color: ${theme.brandColor};
-            //   background-color: ${theme.backgroundColor};
-            //   overflow: hidden;
-            //   white-space: nowrap;
-            //    }
-            // `}
-            className="title"
-          >
+        <StyledFlexGroup direction="column" alignItems="center" theme={theme}>
+          <EuiTitle className="title">
             <EuiFlexItem>
               <EuiText>
                 <h2>Hi, my name is</h2>
@@ -72,10 +75,24 @@ const HomePage = () => {
             </EuiFlexItem>
           </EuiTitle>
           {/* </EuiFlexItem> */}
-        </EuiFlexGroup>
-      </ThemeProvider>
-    </div>
+        </StyledFlexGroup>
+      </div>
+    </ThemeProvider>
   );
 };
 
 export default HomePage;
+
+/** Old theme:
+ * {
+        // @ts-ignore - if providing your own Emotion theme, create your own emotion.d.ts - see https://emotion.sh/docs/typescript#define-a-theme
+        brandColor: "white",
+        backgroundColor: "black",
+        padding: "40vh 1rem",
+        "@media (max-width: 768px)": {
+          padding: "40vh 10px",
+        },
+        height: "-webkit-fill-available",
+        width: "fit-content",
+      }
+ */

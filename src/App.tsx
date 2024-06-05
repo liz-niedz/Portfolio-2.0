@@ -30,7 +30,7 @@ import Connect from "./Connect";
 const App = () => {
   return (
     <Router>
-      <EuiFlexGrid columns={2} style={{ height: "100vh" }}>
+      <EuiFlexGrid columns={2} className="screenLayout">
         <EuiFlexItem style={{ backgroundColor: "white" }}>
           <SideNav />
         </EuiFlexItem>

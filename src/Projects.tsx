@@ -27,12 +27,14 @@ const Projects = () => {
               />
             </div>
           }
-          title="Elastic in Nature"
-          description="Example of a card's description. Stick to one or two sentences."
+          title="Flashcard App"
+          description="React app that allows students to create decks that contain flashcards in which they can add or edit."
           footer={
             <EuiFlexGroup justifyContent="flexEnd">
               <EuiFlexItem>
-                <EuiButton>Go for it</EuiButton>
+                <EuiButton href="https://github.com/liz-niedz/Flashcard-app">
+                  Link to Code
+                </EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>
           }

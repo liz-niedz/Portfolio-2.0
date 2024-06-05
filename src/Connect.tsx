@@ -9,27 +9,26 @@ import {
   EuiTextArea,
   EuiTitle,
 } from "@elastic/eui";
-import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
-import { useForm } from "react-hook-form";
+import React, { useRef, useState, useEffect } from "react";
+import { SubmitHandler, useForm, Controller } from "react-hook-form";
 import "./Home.css";
 
 type FormData = {
   name: string;
   email: string;
+  message: string;
 };
 
 const Connect = () => {
-  const {
-    register,
-    setValue,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
-
-  const onSubmit = handleSubmit(({ name, email }) => {
-    console.log(name, email);
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
   });
+
+  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
 
   return (
     <EuiFlexGroup alignItems="center" justifyContent="center">
@@ -41,44 +40,46 @@ const Connect = () => {
             padding: "10px",
             width: "60%",
             alignContent: "center",
-            // width: "50%",
-            // maxWidth: 350,
             textAlign: "center",
             height: "40%",
-            // margin: "auto",
-            // marginTop: "15%",
           }}
         >
           <EuiTitle>
             <p style={{ paddingBottom: "10px" }}>Lets Connect!</p>
           </EuiTitle>
-          <EuiForm onSubmit={onSubmit} style={{ display: "inline-block" }}>
-            <EuiFormRow label="name">
-              <EuiFieldText
-                //value={value}
-                //inputRef={{...register("name")}}
-                aria-label="Use aria labels when no actual label is in use"
+          <EuiForm
+            component="form"
+            onSubmit={handleSubmit((data) => {
+              console.log(data);
+              alert(JSON.stringify(data));
+            })}
+            style={{ display: "inline-block" }}
+          >
+            <EuiFormRow label="Name">
+              <Controller
+                name="name"
+                control={control}
+                render={({ field }) => <EuiFieldText {...field} />}
               />
             </EuiFormRow>
             <EuiFormRow label="Email">
-              <EuiFieldText
-                // value={value}
-                //onChange={(e) => onChange(e)}
-                // onChange={e => {
-                //   setValue("email", e.target.value);
-                // }}
-                aria-label="Use aria labels when no actual label is in use"
+              <Controller
+                name="email"
+                control={control}
+                render={({ field }) => <EuiFieldText {...field} />}
               />
             </EuiFormRow>
             <EuiFormRow label="Message">
-              <EuiTextArea
-                //value={value}
-                //onChange={(e) => onChange(e)}
-                aria-label="Use aria labels when no actual label is in use"
+              <Controller
+                name="message"
+                control={control}
+                render={({ field }) => <EuiTextArea {...field} />}
               />
             </EuiFormRow>
             <EuiFormRow>
-              <EuiButton className="homeButton">Submit</EuiButton>
+              <EuiButton type="submit" className="homeButton">
+                Submit
+              </EuiButton>
             </EuiFormRow>
           </EuiForm>
         </EuiPanel>

@@ -76,61 +76,9 @@
   } ;
 
   /* HTML: <div class="loader"></div> */
-.loader {
-  width: 70px;
-  aspect-ratio: 4;
-  background: radial-gradient(circle closest-side,#F8F8FF 90%,#F8F8FF) 0/calc(100%/3) 100% space;
-  clip-path: inset(0 100% 0 0);
-  animation: l1 1s steps(4) infinite;
-}
-@keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
 
 
-  .dot-flashing {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite linear alternate;
-    animation-delay: 0.5s;
-  }
-  .dot-flashing::before, .dot-flashing::after {
-    content: "";
-    /* //display: inline-block; */
-    position: absolute;
-    top: 0;
-  }
-  .dot-flashing::before {
-    left: -15px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite alternate;
-    animation-delay: 0s;
-  }
-  .dot-flashing::after {
-    left: 15px;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite alternate;
-    animation-delay: 1s;
-  }
-  
-  @keyframes dot-flashing {
-    0% {
-      background-color: #9880ff;
-    }
-    50%, 100% {
-      background-color: rgba(152, 128, 255, 0.2);
-    }
-  }
+
 
   .sideBar{
     height: 50% !important;
@@ -147,12 +95,14 @@
 
   .homeButton{
     background-color: #b0ecfd !important;
-   color: black  !important;
+   color: black  !important; 
+   width: 30vh !important;
   }
 
   .homeButton:hover{
     color: black;
     background-color: #03c2fc !important;
+    width: 30vh !important;
   }
 
   .codesandbox-1drqwgc-euiFlexGroup-responsive-l-flexStart-stretch-row {
