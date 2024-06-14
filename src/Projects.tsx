@@ -11,7 +11,7 @@ import "./Projects.css";
 const Projects = () => {
   return (
     <EuiFlexGroup
-      gutterSize="l"
+      gutterSize="s"
       alignItems="flexStart"
       style={{ padding: "20px" }}
     >
@@ -19,24 +19,15 @@ const Projects = () => {
         <EuiCard
           className="cardComponent"
           textAlign="left"
-          image={
-            <div>
-              <img
-                src="https://source.unsplash.com/400x200/?Nature"
-                alt="Nature"
-              />
-            </div>
-          }
+          image="https://source.unsplash.com/400x200/?Nature"
           title="Flashcard App"
           description="React app that allows students to create decks that contain flashcards in which they can add or edit."
           footer={
-            <EuiFlexGroup justifyContent="flexEnd">
-              <EuiFlexItem>
-                <EuiButton href="https://github.com/liz-niedz/Flashcard-app">
-                  Link to Code
-                </EuiButton>
-              </EuiFlexItem>
-            </EuiFlexGroup>
+            <EuiFlexItem>
+              <EuiButton href="https://github.com/liz-niedz/Flashcard-app">
+                Link to Code
+              </EuiButton>
+            </EuiFlexItem>
           }
         />
       </EuiFlexItem>
@@ -45,18 +36,20 @@ const Projects = () => {
           className="cardComponent"
           textAlign="left"
           image="https://source.unsplash.com/400x200/?Water"
-          title="Elastic in Water"
-          description="Example of a card's description. Stick to one or two sentences."
+          title="Code Challenge"
+          description="An app that allows a user to create and edit items as well as list them."
           footer={
             <EuiFlexGroup justifyContent="flexEnd">
               <EuiFlexItem>
-                <EuiButton>Go for it</EuiButton>
+                <EuiButton href="https://github.com/liz-niedz/code-challenge">
+                  Link to Code
+                </EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>
           }
         />
       </EuiFlexItem>
-      <EuiFlexItem>
+      {/* <EuiFlexItem>
         <EuiCard
           className="cardComponent"
           textAlign="left"
@@ -67,12 +60,12 @@ const Projects = () => {
           footer={
             <EuiFlexGroup justifyContent="flexEnd">
               <EuiFlexItem>
-                <EuiButton>Go for it</EuiButton>
+                <EuiButton>Link to Code</EuiButton>
               </EuiFlexItem>
             </EuiFlexGroup>
           }
         />
-      </EuiFlexItem>
+      </EuiFlexItem> */}
     </EuiFlexGroup>
   );
 };

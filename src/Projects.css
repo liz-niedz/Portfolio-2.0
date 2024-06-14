@@ -1,9 +1,7 @@
-.cardComponent {
-    width: 225px;
-    height: 325px !important;
+.cardComponent { 
     
 }
 
-.codesandbox-1drqwgc-euiFlexGroup-responsive-l-flexStart-stretch-row {
-
+.codesandbox-jolp8x-euiCard__content-vertical {
+    flex-grow: 0 !important;
 }
