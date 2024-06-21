@@ -74,7 +74,6 @@ const HomePage = () => {
               </EuiText>
             </EuiFlexItem>
           </EuiTitle>
-          {/* </EuiFlexItem> */}
         </StyledFlexGroup>
       </div>
     </ThemeProvider>
@@ -82,17 +81,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-/** Old theme:
- * {
-        // @ts-ignore - if providing your own Emotion theme, create your own emotion.d.ts - see https://emotion.sh/docs/typescript#define-a-theme
-        brandColor: "white",
-        backgroundColor: "black",
-        padding: "40vh 1rem",
-        "@media (max-width: 768px)": {
-          padding: "40vh 10px",
-        },
-        height: "-webkit-fill-available",
-        width: "fit-content",
-      }
- */

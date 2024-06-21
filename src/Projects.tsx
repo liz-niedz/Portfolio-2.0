@@ -49,23 +49,6 @@ const Projects = () => {
           }
         />
       </EuiFlexItem>
-      {/* <EuiFlexItem>
-        <EuiCard
-          className="cardComponent"
-          textAlign="left"
-          image="https://source.unsplash.com/400x200/?City"
-          icon={<EuiIcon size="xxl" type="logoBeats" />}
-          title={"Beats in the City"}
-          description="This card has an href and should be a link."
-          footer={
-            <EuiFlexGroup justifyContent="flexEnd">
-              <EuiFlexItem>
-                <EuiButton>Link to Code</EuiButton>
-              </EuiFlexItem>
-            </EuiFlexGroup>
-          }
-        />
-      </EuiFlexItem> */}
     </EuiFlexGroup>
   );
 };

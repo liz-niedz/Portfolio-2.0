@@ -20,7 +20,6 @@ import {
   EuiFlexGrid,
 } from "@elastic/eui";
 import SideNav from "./sideNav";
-import TestNav from "./sideNavTest";
 import { ThemeProvider, css } from "@emotion/react";
 import HomePage from "./Home";
 import { RowHeightUtils } from "@elastic/eui/src/components/datagrid/utils/row_heights";
@@ -37,12 +36,9 @@ const App = () => {
 
         <EuiFlexItem style={{ backgroundColor: "black" }}>
           <Routes>
-            {/* Specify the path for the HomePage route */}
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/connect" element={<Connect />} />
-
-            {/* Add more routes as needed */}
           </Routes>
         </EuiFlexItem>
       </EuiFlexGrid>
